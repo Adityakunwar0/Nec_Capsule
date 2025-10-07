@@ -1,4 +1,4 @@
-import protocol from "./protocol.jpg";
+import protocol from "./protocol.JPG";
 import bus from "./bus.png";
 import star from "./star.png";
 import mesh from "./mesh.png";
@@ -7,10 +7,10 @@ import hybrid from "./hybrid.png";
 import frame from "./frame.png";
 import aloha from "./aloha.png";
 import ethernet from "./ethernet.png";
-import routing from "./routing.jpg";
-import ipv from "./ipv.jpg";
-import tcp from "./tcp.jpg";
-import port from "./port.jpg";
+import routing from "./routing.JPG";
+import ipv from "./ipv.JPG";
+import tcp from "./tcp.JPG";
+import port from "./port.JPG";
 
 export const topic = {
   name: "5. Concept of Computer Network and Network Security System",
