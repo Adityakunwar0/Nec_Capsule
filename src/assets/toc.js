@@ -1,0 +1,35 @@
+export const topic = {
+  name: "6. Theory of Computation and Computer Graphics",
+  subtopics: [
+    {
+      subname:
+        "6.1 Introduction to finite automata: Introduction to Finite Automata and Finite State Machine, Equivalence of DFA and NDFA, Minimization of Finite State Machines, Regular Expressions, Equivalence of Regular Expression and Finite Automata, Pumping lemma for regular language.",
+      blocks: [],
+    },
+    {
+      subname:
+        "6.2 Introduction to context free language: Introduction to Context Free Grammar (CFG), Derivative trees (Bottom-up and Top-down approach, Leftmost and Rightmost, Language of a grammar), Parse tree and its construction, Ambiguous grammar, Chomsky Normal Form (CNF), Greibach Normal Form (GNF), Backus-Naur Form (BNF), Push down automata, Equivalence of context free language and PDA, Pumping lemma for context free language, and Properties of context free Language.",
+      blocks: [],
+    },
+    {
+      subname:
+        "6.3 Turing machine: Introduction to Turing Machines (TM), Notations of Turing Machine, Acceptance of a string by a Turing Machines, Turing Machine as a Language Recognizer, Turing Machine as a Computing Function, Turing Machine as a enumerator of stings of a language, Turing Machine with Multiple Tracks, Turing Machine with Multiple Tapes, Non-Deterministic Turing Machines, Church Turing Thesis, Universal Turing Machine for encoding of Turing Machine, Computational Complexity, Time and Space complexity of A Turing Machine, Intractability, Reducibility.",
+      blocks: [],
+    },
+    {
+      subname:
+        "6.4 Introduction of computer graphics: Overview of Computer Graphics, Graphics Hardware (Display Technology, Architecture of Raster-Scan Displays, Vector Displays, Display Processors, output device and Input Devices), Graphics Software and Software standards.",
+      blocks: [],
+    },
+    {
+      subname:
+        "6.5 Two-dimensional transformation: Two-dimensional translation, rotation, scaling, reflection, shear transformation, 2D composite transformation, 2D viewing pipeline, world to screen viewing transformation and clipping (Cohen Sutherland line clipping, Liang-Barsky Line Clipping).",
+      blocks: [],
+    },
+    {
+      subname:
+        "6.6 Three-dimensional transformation: Three-dimensional translation, rotation, scaling, reflection, shear transformation, 3D composite transformation, 3D viewing pipeline, projection concepts (Orthographic, parallel, perspective projection).",
+      blocks: [],
+    },
+  ],
+};
