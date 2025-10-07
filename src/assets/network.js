@@ -1,4 +1,4 @@
-import pdu from "./pdu.jpg";
+import protol from "./protocol.jpg";
 import bus from "./bus.png";
 import star from "./star.png";
 import mesh from "./mesh.png";
@@ -153,7 +153,7 @@ export const topic = {
           text: " PDU ( Protocol Data Unit ) Name Of Each Layer Of OSI Model : ",
         },
         { type: "semibold", text: " • Layer Name From Top To Bottom :   " },
-        { type: "image", src: pdu },
+        { type: "image", src: protocol },
 
         {
           type: "bold",
