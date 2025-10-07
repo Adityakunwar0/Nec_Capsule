@@ -1,4 +1,4 @@
-import protol from "./protocol.jpg";
+import protocol from "./protocol.jpg";
 import bus from "./bus.png";
 import star from "./star.png";
 import mesh from "./mesh.png";
