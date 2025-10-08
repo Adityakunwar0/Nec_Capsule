@@ -11,7 +11,7 @@ import decoder from "./decoder.jpeg";
 import binarysubtractor from "./binarysubtractor.JPG";
 
 export const topic = {
-  name: "2. Digital Logic and Microprocessor (ACtE02)",
+  name: "2. Digital Logic and Microprocessor ",
   subtopics: [
     {
       subname:

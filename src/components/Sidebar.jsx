@@ -85,7 +85,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, topic }) => {
               window.closeNavbar();
             }
           }}
-          className="p-2 bg-indigo-600 text-white rounded"
+          className="p-2 bg-indigo-600 text-white rounded "
         >
           {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
