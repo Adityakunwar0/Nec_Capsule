@@ -69,7 +69,7 @@ const Navbar = ({ navOpen, setNavOpen, setSidebarOpen }) => {
 
       {/* Mobile Dropdown Menu */}
       {navOpen && (
-        <div className="md:hidden bg-gradient-to-r from-indigo-700 to-violet-500 mt-12 px-4 pt-2 pb-8 space-y-2">
+        <div className="md:hidden bg-gradient-to-r from-indigo-700 to-violet-500 mt-16 px-4 pt-2 pb-8 space-y-2">
           {["/cse", "/civil", "/mechanical", "/electrical"].map((path, i) => (
             <Link
               key={i}

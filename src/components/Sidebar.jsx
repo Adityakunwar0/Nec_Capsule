@@ -89,12 +89,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, topic }) => {
         >
           {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-        <h2 className="font-bold">{topic.name}</h2>
+        <h2 className="ml-10 font-semibold">{topic.name}</h2>
       </div>
 
       {/* Mobile Sidebar */}
       {sidebarOpen && (
-        <div className="md:hidden fixed top-12 left-0 mt-20 w-64 h-screen bg-white border-r p-4 overflow-y-auto z-40">
+        <div className="md:hidden fixed top-12 left-0 mt-22 h-screen bg-sky-500/100 border-r p-4 overflow-y-auto z-40">
           {topic.subtopics.map((sub, i) => (
             <button
               key={i}
@@ -118,8 +118,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, topic }) => {
       <div className="flex-1 p-6 relative">
         {selected !== null && topic.subtopics[selected] ? (
           <>
-            <h1 className="text-2xl font-bold mb-2 mt-10">{topic.name}</h1>
-            <h2 className="flex justify-between pl-3 text-lg font-semibold mb-4 text-black">
+            <h1 className="text-xl font-bold mb-2 mt-12 md:text-2xl  ">{topic.name}</h1>
+            <h2 className="flex justify-between pl-3 text-base font-semibold mb-4 text-black md:text-xl">
               {topic.subtopics[selected]?.subname || ""}
             </h2>
 
@@ -129,7 +129,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, topic }) => {
                 return (
                   <p
                     key={idx}
-                    className="font-bold text-gray-800 text-xl underline mt-4 mb-3"
+                    className="font-semibold text-gray-800 text-xl underline mt-4 mb-3 md:font-bold "
                   >
                     {block.text}
                   </p>
@@ -139,7 +139,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, topic }) => {
                   <p
                     key={idx}
                     className={`mb-2  text-gray-800 ${
-                      block.center ? "pl-12" : ""
+                      block.center ? "pl-10 md:pl-12" : ""
                     }`}
                   >
                     {block.text}
@@ -176,7 +176,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, topic }) => {
                     key={idx}
                     src={block.src}
                     alt="Content"
-                    className="ml-10 mb-5 my-4 w-full max-w-md rounded shadow"
+                    className=" mb-5 my-4 w-full max-w-md rounded shadow"
                   />
                 );
               } else if (block.type === "mcq") {
