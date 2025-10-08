@@ -9,6 +9,17 @@ import binaryadder from "./binaryadder.JPG";
 import encoder from "./encoder.JPG";
 import decoder from "./decoder.jpeg";
 import binarysubtractor from "./binarysubtractor.JPG";
+import seq from "./seq.JPG";
+import async from "./async.JPG";
+import sync from "./sync.JPG";
+import leveltrig from "./leveltrig.JPG";
+import edgetrig from "./edgetrig.JPG";
+import sr from "./sr.jpg";
+import srflip from "./srflip.JPG";
+import jkflip from "./jkflip.JPG";
+import dflip from "./dflip.JPG";
+import tflip from "./tflip.JPG";
+import masterflip from "./masterflip.jpg";
 
 export const topic = {
   name: "2. Digital Logic and Microprocessor ",
@@ -1585,7 +1596,7 @@ export const topic = {
           text: "⟹ Signed numbers can show both positive and negative values, while unsigned numbers show only positives.",
           center: true,
         },
-        {type : "bold", text : "  MCQ : "},
+        { type: "bold", text: "  MCQ : " },
         {
           type: "mcq",
           q: "1. What is the defining feature of a combinational circuit?",
@@ -2224,12 +2235,965 @@ export const topic = {
     {
       subname:
         "2.3 Sequential Logic Circuit : RS Flip-Flops, Gated Flip-Flops, Edge Triggered Flip-Flops, Master-Slave Flip-Flops, Types of Registers, Applications of Shift Registers, Asynchronous Counters, Synchronous Counters.",
-      blocks: [],
+      blocks: [
+        { type: "bold", text: "Sequential Logic : " },
+
+        {
+          type: "text",
+          text: "• Sequential circuits depend on current input + previous output (memory).",
+        },
+
+        {
+          type: "text",
+          text: "• They have memory elements (like latches or flip-flops) that store binary data.",
+        },
+
+        {
+          type: "text",
+          text: "⟹ Example: traffic lights (next state depends on previous light).",
+          center: true,
+        },
+        { type: "image", src: seq },
+        { type: "bold", text: "Types of Sequential Circuits : " },
+
+        { type: "semibold", text: "a) Asynchronous : " },
+        {
+          type: "text",
+          text: "• Works without clock (changes as soon as input changes).",
+        },
+        {
+          type: "text",
+          text: "• Faster but hard to design and can produce uncertain outputs.",
+        },
+        { type: "image", src: async },
+        { type: "text", text: "• Used when speed is important." },
+
+        { type: "semibold", text: "b) Synchronous" },
+        {
+          type: "text",
+          text: "• Works with clock pulses (changes only at clock signals).",
+        },
+        {
+          type: "text",
+          text: "• More reliable, easier to design but slower than asynchronous.",
+        },
+        { type: "image", src: sync },
+        {
+          type: "text",
+          text: "• Used in counters, flip-flops, state machines.",
+        },
+
+        { type: "bold", text: "Clock Signal and Triggering : " },
+
+        { type: "semibold", text: " • Clock Signal : " },
+        { type: "text", text: "• A repeating pulse (ON/OFF)." },
+        {
+          type: "text",
+          text: "• Can be square wave (equal ON/OFF) or unequal pulses.",
+        },
+        { type: "text", text: "• Controls when sequential circuits update." },
+
+        { type: "semibold", text: " • Triggering " },
+        {
+          type: "text",
+          text: "• Tells when a circuit should respond to the clock.",
+        },
+        { type: "semibold", text: "Types : " },
+
+        {
+          type: "important",
+          text: "A. Level Triggering : ",
+          desc: "Works when clock is HIGH (positive) or LOW (negative).",
+        },
+        { type: "image", src: leveltrig },
+        {
+          type: "important",
+          text: "B. Edge Triggering : ",
+          desc: "Works when clock changes from:",
+        },
+        { type: "text", text: "⟹ LOW → HIGH = Positive edge", center: true },
+        { type: "text", text: "⟹ HIGH → LOW = Negative edge", center: true },
+        { type: "image", src: edgetrig },
+
+        { type: "bold", text: " Latches : " },
+        { type: "text", text: "• A basic memory device that stores 1 bit." },
+        {
+          type: "text",
+          text: "• Works when enable signal is active (level-sensitive).",
+        },
+        { type: "text", text: "• Types: SR Latch (Set-Reset Latch)." },
+        { type: "image", src: sr },
+
+        { type: "bold", text: " Flip-Flops : " },
+        {
+          type: "text",
+          text: "• Store 1 bit like latches, but are edge-triggered.",
+        },
+        {
+          type: "text",
+          text: "• Used as building blocks of registers and counters.",
+        },
+        { type: "text", text: "• Types : " },
+
+        {
+          type: "important",
+          text: " A. SR Flip-Flop (Set-Reset) : ",
+          desc: "Stores 1 bit using inputs S (set) and R (reset). Invalid when both S and R = 1.",
+        },
+        { type: "image", src: srflip },
+        {
+          type: "important",
+          text: " B. D Flip-Flop (Data or Delay) : ",
+          desc: "Output follows input D at the clock edge. Used to store data cleanly.",
+        },
+        { type: "image", src: dflip },
+        {
+          type: "important",
+          text: " C. JK Flip-Flop : ",
+          desc: "Modified SR flip-flop that removes invalid state. When J=K=1 → Output toggles (changes to opposite state).",
+        },
+        { type: "image", src: jkflip },
+        {
+          type: "important",
+          text: " D. T Flip-Flop (Toggle) : ",
+          desc: "Single input (T). When T=1, it toggles output each clock pulse.",
+        },
+        { type: "image", src: tflip },
+
+        { type: "bold", text: " Master-Slave JK Flip-Flop : " },
+        {
+          type: "text",
+          text: "• Two JK flip-flops connected in series (Master + Slave).",
+        },
+        {
+          type: "text",
+          text: "• Solves race-around problem (unstable output when J=K=1 for long clock).",
+        },
+        {
+          type: "text",
+          text: "• Master works when clock = 1, slave works when clock = 0.",
+        },
+        { type: "image", src: masterflip },
+
+        { type: "bold", text: " Counters : " },
+        { type: "text", text: "• Used to count clock pulses." },
+        { type: "text", text: "• Made of flip-flops." },
+        { type: "semibold", text: "• Types:" },
+
+        {
+          type: "important",
+          text: " A. Asynchronous (Ripple Counter) : ",
+          desc: "Only first flip-flop gets the main clock; others depend on previous output. Slower due to delay.",
+        },
+        {
+          type: "important",
+          text: " B. Synchronous Counter : ",
+          desc: "All flip-flops share the same clock. Faster and more accurate.",
+        },
+
+        { type: "bold", text: " Registers : " },
+        {
+          type: "text",
+          text: "• Group of flip-flops used to store multiple bits.",
+        },
+        { type: "text", text: "• 4 flip-flops → 4-bit register." },
+        { type: "text", text: "• Used to store or shift data." },
+        { type: "text", text: "• Types of Shift Registers : " },
+
+        {
+          type: "important",
+          text: " i. SISO (Serial In Serial Out) : ",
+          desc: "Data in/out one bit at a time.",
+        },
+        {
+          type: "important",
+          text: " ii. SIPO (Serial In Parallel Out) : ",
+          desc: "Enter serially, read all bits together.",
+        },
+        {
+          type: "important",
+          text: " iii. PISO (Parallel In Serial Out) : ",
+          desc: "Load all bits, send one by one.",
+        },
+        {
+          type: "important",
+          text: " iv. PIPO (Parallel In Parallel Out) : ",
+          desc: "Load and output all bits together.",
+        },
+
+        { type: "bold", text: "Shift Registers : " },
+        {
+          type: "text",
+          text: "• Move (shift) data left or right within the register.",
+        },
+        { type: "text", text: "• Left shift = multiply by 2" },
+        { type: "text", text: "• Right shift = divide by 2" },
+        {
+          type: "important",
+          text: "Bidirectional Register",
+          desc: "Can shift both ways (left/right) using a control signal (M).",
+        },
+
+        { type: "bold", text: " Ring Counter : " },
+        {
+          type: "text",
+          text: "• A circular shift register where last flip-flop output connects to first.",
+        },
+        { type: "text", text: "• Number of states = Number of flip-flops." },
+        {
+          type: "text",
+          text: "⟹ Example (4-bit): 1000 → 0100 → 0010 → 0001 → repeat.",
+          center: true,
+        },
+        { type: "text", text: "• Used in timing and control circuits." },
+
+        { type: "bold", text: "Johnson Counter : " },
+        {
+          type: "text",
+          text: "• Similar to ring counter but uses complemented output of last flip-flop as input to first.",
+        },
+        {
+          type: "text",
+          text: "• Has twice the number of states (e.g., 4 flip-flops → 8 states).",
+        },
+        { type: "text", text: "• Doesn’t need preset input." },
+        { type: "bold", text: " MCQ :  " },
+        {
+          type: "mcq",
+          q: "1. Which circuit stores binary information in the form of bits?",
+          options: [
+            "Combinational circuit",
+            "Sequential circuit",
+            "Arithmetic circuit",
+            "Logic circuit",
+          ],
+          ans: "Sequential circuit",
+          explanation:
+            "Sequential circuits use memory elements to store data, unlike combinational circuits which have no memory.",
+        },
+        {
+          type: "mcq",
+          q: "2. Which device serves as a memory element in sequential circuits?",
+          options: ["Multiplexer", "Logic gate", "Flip-flop", "Decoder"],
+          ans: "Flip-flop",
+          explanation:
+            "Flip-flops can hold (store) the value of a single bit and are key memory elements in sequential circuits.",
+        },
+        {
+          type: "mcq",
+          q: "3. What is the output of a flip-flop when both inputs S=1 and R=1 in an SR flip-flop?",
+          options: ["0", "1", "Invalid", "Toggle"],
+          ans: "Invalid",
+          explanation:
+            "In an SR flip-flop, S=1 and R=1 is an invalid state because the outputs become indeterminate.",
+        },
+        {
+          type: "mcq",
+          q: "4. Which type of sequential circuit does not use a clock signal?",
+          options: [
+            "Synchronous",
+            "Asynchronous",
+            "Master-Slave",
+            "All of these",
+          ],
+          ans: "Asynchronous",
+          explanation:
+            "Asynchronous sequential circuits operate without a clock signal and are therefore also called unclocked circuits.",
+        },
+        {
+          type: "mcq",
+          q: "5. Which triggering method is used in D flip-flops for synchronization?",
+          options: [
+            "Level triggering",
+            "Edge triggering",
+            "Pulse triggering",
+            "None",
+          ],
+          ans: "Edge triggering",
+          explanation:
+            "D flip-flops are typically edge-triggered, changing state on a specified clock edge (rising or falling).",
+        },
+        {
+          type: "mcq",
+          q: "6. The basic difference between latches and flip-flops is:",
+          options: [
+            "Flip-flops are edge-triggered",
+            "Latches are level-triggered",
+            "Both of the above",
+            "None of the above",
+          ],
+          ans: "Both of the above",
+          explanation:
+            "Latches respond to input levels, whereas flip-flops respond to clock edges.",
+        },
+        {
+          type: "mcq",
+          q: "7. Which of these is NOT a type of shift register configuration?",
+          options: ["SISO", "SIPO", "PISO", "SISOPO"],
+          ans: "SISOPO",
+          explanation:
+            "Standard configurations: SISO, SIPO, PISO, PIPO. SISOPO does not exist.",
+        },
+        {
+          type: "mcq",
+          q: "8. In which counter does the clock pulse apply only to the first flip-flop?",
+          options: [
+            "Synchronous counter",
+            "Asynchronous counter",
+            "Up-down counter",
+            "Ring counter",
+          ],
+          ans: "Asynchronous counter",
+          explanation:
+            "In asynchronous (ripple) counters, each subsequent flip-flop is triggered by the output of the previous one.",
+        },
+        {
+          type: "mcq",
+          q: "9. Which type of register allows shifting of data in both directions?",
+          options: [
+            "Bidirectional register",
+            "SISO",
+            "Ring counter",
+            "Johnson counter",
+          ],
+          ans: "Bidirectional register",
+          explanation:
+            "Bidirectional registers can shift data left or right depending on control input.",
+        },
+        {
+          type: "mcq",
+          q: "10. What is the main advantage of synchronous counters over asynchronous counters?",
+          options: [
+            "Slower operation",
+            "Simpler design",
+            "Faster and no ripple delay",
+            "Lower cost",
+          ],
+          ans: "Faster and no ripple delay",
+          explanation:
+            "All flip-flops are driven by the same clock, reducing delay.",
+        },
+        {
+          type: "mcq",
+          q: "11. Which flip-flop type toggles output when input is high and clocked?",
+          options: [
+            "SR flip-flop",
+            "D flip-flop",
+            "JK flip-flop",
+            "T flip-flop",
+          ],
+          ans: "T flip-flop",
+          explanation:
+            "T (Toggle) flip-flops invert their output when T=1 at every clock pulse.",
+        },
+        {
+          type: "mcq",
+          q: "12. What happens in a master-slave JK flip-flop when J=K=1 during a long clock pulse?",
+          options: [
+            "No change",
+            "Outputs become unstable",
+            "Outputs are stable",
+            "Inputs are disabled",
+          ],
+          ans: "Outputs become unstable",
+          explanation:
+            "Continuous toggling can lead to race-around, but the master-slave configuration solves this by dividing the pulse between master and slave.",
+        },
+        {
+          type: "mcq",
+          q: "13. In a 4-bit ring counter, how many unique states are present?",
+          options: ["2", "4", "8", "16"],
+          ans: "4",
+          explanation:
+            "Number of unique states is equal to the number of flip-flops in a ring counter.",
+        },
+        {
+          type: "mcq",
+          q: "14. Which counter has twice the number of states compared to a ring counter with the same flip-flops?",
+          options: [
+            "Johnson counter",
+            "Ripple counter",
+            "Synchronous counter",
+            "Modulo counter",
+          ],
+          ans: "Johnson counter",
+          explanation:
+            "Johnson counters have 2n states where n is the number of flip-flops, while ring counters have n states.",
+        },
+        {
+          type: "mcq",
+          q: "15. Which is NOT a property of flip-flops?",
+          options: [
+            "Stores a single bit",
+            "Has two stable states",
+            "Level-triggered",
+            "Needs clock input",
+          ],
+          ans: "Level-triggered",
+          explanation:
+            "Flip-flops are edge-triggered; latches are level-triggered.",
+        },
+        {
+          type: "mcq",
+          q: "16. Which register configuration allows parallel writable and parallel readable data?",
+          options: ["PIPO", "SIPO", "PISO", "SISO"],
+          ans: "PIPO",
+          explanation:
+            "PIPO (Parallel-In Parallel-Out) enables loading and reading all bits at once.",
+        },
+        {
+          type: "mcq",
+          q: "17. Which of these can act as a universal flip-flop?",
+          options: [
+            "SR flip-flop",
+            "T flip-flop",
+            "JK flip-flop",
+            "D flip-flop",
+          ],
+          ans: "JK flip-flop",
+          explanation:
+            "JK flip-flop can be configured to act as SR, D, or T flip-flop based on inputs.",
+        },
+        {
+          type: "mcq",
+          q: "18. A left shift of binary data in a shift register achieves:",
+          options: [
+            "Multiplies it by 4",
+            "Multiplies it by 2",
+            "Divides by 2",
+            "No change",
+          ],
+          ans: "Multiplies it by 2",
+          explanation:
+            "Left shifting a binary number is equivalent to multiplying by 2.",
+        },
+        {
+          type: "mcq",
+          q: "19. Edge-triggered circuits respond to:",
+          options: [
+            "Continuous level",
+            "Sudden level change",
+            "Power-on only",
+            "None",
+          ],
+          ans: "Sudden level change",
+          explanation:
+            "Edge-triggered circuits change state only on a clock edge (transition).",
+        },
+        {
+          type: "mcq",
+          q: "20. Which of the following is a combinational circuit?",
+          options: ["Counter", "Shift register", "Multiplexer", "Flip-flop"],
+          ans: "Multiplexer",
+          explanation:
+            "Multiplexer, decoder, and encoder are combinational circuits.",
+        },
+        {
+          type: "mcq",
+          q: "21. Which flip-flop is least likely to encounter an invalid state?",
+          options: ["SR", "D", "JK", "Both b and c"],
+          ans: "Both b and c",
+          explanation:
+            "D and JK flip-flops do not have an undefined state, unlike SR when both S and R are 1.",
+        },
+        {
+          type: "mcq",
+          q: "22. In a 4-bit synchronous counter, how many clock pulses are needed for it to reset?",
+          options: ["2", "4", "8", "16"],
+          ans: "16",
+          explanation: "A 4-bit counter counts up to 16 states (0–15).",
+        },
+        {
+          type: "mcq",
+          q: "23. The enable signal in a latch is used to:",
+          options: [
+            "Clear the output",
+            "Allow memory operation",
+            "Toggle output",
+            "Power down",
+          ],
+          ans: "Allow memory operation",
+          explanation:
+            "Latches store data only when enabled; otherwise, output remains unchanged.",
+        },
+        {
+          type: "mcq",
+          q: "24. The Johnson counter of 4 flip-flops has how many states?",
+          options: ["2", "4", "8", "16"],
+          ans: "8",
+          explanation:
+            "Johnson counter has 2n (here 8) states for n flip-flops.",
+        },
+        {
+          type: "mcq",
+          q: "25. Asynchronous circuits are usually used when __________ is important:",
+          options: ["Power", "Cost", "Speed", "Size"],
+          ans: "Speed",
+          explanation:
+            "Since they change states instantly after input changes, they're used where speed is crucial.",
+        },
+        {
+          type: "mcq",
+          q: "26. A D flip-flop can be made using which flip-flop by proper wiring?",
+          options: ["JK", "SR", "T", "All"],
+          ans: "JK",
+          explanation:
+            "By connecting J=D and K=D', a JK flip-flop behaves like a D flip-flop.",
+        },
+        {
+          type: "mcq",
+          q: "27. In a ripple counter, propagation delay is:",
+          options: [
+            "Same in all flip-flops",
+            "Cumulative",
+            "Zero",
+            "Equal to pulse width",
+          ],
+          ans: "Cumulative",
+          explanation:
+            "Each flip-flop waits for the previous one, causing cumulative delay.",
+        },
+        {
+          type: "mcq",
+          q: "28. Which register is used to load data serially and retrieve in parallel?",
+          options: ["SISO", "SIPO", "PISO", "PIPO"],
+          ans: "SIPO",
+          explanation:
+            "Serial-In Parallel-Out register loads serially and outputs in parallel.",
+        },
+        {
+          type: "mcq",
+          q: "29. What problem in JK flip-flop is solved by master-slave configuration?",
+          options: [
+            "Invalid input",
+            "Race-around condition",
+            "Power dissipation",
+            "Memory loss",
+          ],
+          ans: "Race-around condition",
+          explanation:
+            "Master-slave flip-flop avoids multiple toggles for long clock pulses.",
+        },
+        {
+          type: "mcq",
+          q: "30. Which of the following is used in digital timing and control applications?",
+          options: ["Ring counter", "Multiplexer", "Decoder", "None"],
+          ans: "Ring counter",
+          explanation:
+            "Ring counters are used in timing and control due to predictable shifts.",
+        },
+
+        {
+          type: "mcq",
+          q: "31. A binary counter with 3 flip-flops can count up to how many states?",
+          options: ["4", "6", "8", "16"],
+          ans: "8",
+          explanation:
+            "A counter with n flip-flops has 2ⁿ states, so 3 flip-flops → 8 states (0–7).",
+        },
+        {
+          type: "mcq",
+          q: "32. What is the main difference between synchronous and asynchronous counters?",
+          options: [
+            "Clock applied to all flip-flops simultaneously in synchronous counters",
+            "Clock applied sequentially in synchronous counters",
+            "No difference",
+            "Synchronous counters are slower",
+          ],
+          ans: "Clock applied to all flip-flops simultaneously in synchronous counters",
+          explanation:
+            "In synchronous counters, all flip-flops share a common clock, avoiding propagation delay.",
+        },
+        {
+          type: "mcq",
+          q: "33. What type of flip-flop is most commonly used in shift registers?",
+          options: ["SR", "D", "JK", "T"],
+          ans: "D",
+          explanation:
+            "D flip-flops are ideal for shift registers because they transfer input directly to output on clock edges.",
+        },
+        {
+          type: "mcq",
+          q: "34. Which operation cannot be performed by a combinational circuit?",
+          options: ["Addition", "Subtraction", "Division", "Memory storage"],
+          ans: "Memory storage",
+          explanation:
+            "Combinational circuits have no memory; outputs depend only on current inputs.",
+        },
+        {
+          type: "mcq",
+          q: "35. In a 3-bit ring counter, how many unused states are present?",
+          options: ["3", "5", "6", "8"],
+          ans: "5",
+          explanation:
+            "Ring counter uses only 3 of the 8 possible states in a 3-bit configuration.",
+        },
+        {
+          type: "mcq",
+          q: "36. The output of a T flip-flop toggles:",
+          options: ["When T=0", "When T=1", "Always", "Never"],
+          ans: "When T=1",
+          explanation:
+            "When T=1, the output switches (toggles) at each clock pulse; when T=0, it holds.",
+        },
+        {
+          type: "mcq",
+          q: "37. Which of these is a sequential circuit?",
+          options: ["Adder", "Multiplexer", "Decoder", "Counter"],
+          ans: "Counter",
+          explanation:
+            "Sequential circuits depend on both current inputs and past states — counters store state.",
+        },
+        {
+          type: "mcq",
+          q: "38. In digital circuits, metastability occurs when:",
+          options: [
+            "Clock frequency is high",
+            "Setup or hold time is violated",
+            "Temperature changes",
+            "Noise is added",
+          ],
+          ans: "Setup or hold time is violated",
+          explanation:
+            "Violating setup/hold timing can cause unpredictable metastable states in flip-flops.",
+        },
+        {
+          type: "mcq",
+          q: "39. A 4-bit binary counter counts from:",
+          options: [
+            "0000 to 1110",
+            "0000 to 1111",
+            "0001 to 1111",
+            "0000 to 1010",
+          ],
+          ans: "0000 to 1111",
+          explanation:
+            "4-bit binary counter has 16 states (0 to 15 in binary).",
+        },
+        {
+          type: "mcq",
+          q: "40. A decade counter is also known as a:",
+          options: [
+            "Mod-8 counter",
+            "Mod-10 counter",
+            "Mod-12 counter",
+            "Binary counter",
+          ],
+          ans: "Mod-10 counter",
+          explanation:
+            "Decade counter counts 10 distinct states (0–9), so it is a Mod-10 counter.",
+        },
+        {
+          type: "mcq",
+          q: "41. What is the minimum number of flip-flops required for a MOD-32 counter?",
+          options: ["4", "5", "6", "8"],
+          ans: "5",
+          explanation:
+            "MOD-32 means 32 states → 2⁵ = 32 → requires 5 flip-flops.",
+        },
+        {
+          type: "mcq",
+          q: "42. In a synchronous counter, the delay time is determined by:",
+          options: [
+            "Clock pulse width",
+            "Propagation delay of one flip-flop",
+            "Total number of flip-flops",
+            "None of these",
+          ],
+          ans: "Propagation delay of one flip-flop",
+          explanation:
+            "All flip-flops are triggered simultaneously, so delay equals one flip-flop’s delay.",
+        },
+        {
+          type: "mcq",
+          q: "43. Which device is used to convert serial data to parallel data?",
+          options: [
+            "PISO register",
+            "SIPO register",
+            "PIPO register",
+            "SISO register",
+          ],
+          ans: "SIPO register",
+          explanation:
+            "SIPO (Serial-In Parallel-Out) converts serial data into parallel form.",
+        },
+        {
+          type: "mcq",
+          q: "44. Which of the following can act as a frequency divider?",
+          options: ["Flip-flop", "Decoder", "Multiplexer", "Adder"],
+          ans: "Flip-flop",
+          explanation:
+            "A flip-flop divides the frequency of the input clock by 2.",
+        },
+        {
+          type: "mcq",
+          q: "45. What is the main advantage of a synchronous counter over an asynchronous counter?",
+          options: [
+            "Less hardware",
+            "No propagation delay",
+            "Simpler design",
+            "Works without clock",
+          ],
+          ans: "No propagation delay",
+          explanation:
+            "Synchronous counters have minimal delay since all flip-flops share the same clock.",
+        },
+        {
+          type: "mcq",
+          q: "46. A MOD-6 counter will have how many states?",
+          options: ["5", "6", "8", "10"],
+          ans: "6",
+          explanation: "MOD-N counter has N states → MOD-6 = 6 states (0–5).",
+        },
+        {
+          type: "mcq",
+          q: "47. The output of a ring counter is always:",
+          options: ["Random", "Sequential", "Alternating", "Fixed"],
+          ans: "Sequential",
+          explanation:
+            "Ring counter output follows a sequential cyclic pattern of 1s.",
+        },
+        {
+          type: "mcq",
+          q: "48. Which flip-flop configuration eliminates the undefined state of SR flip-flop?",
+          options: [
+            "T flip-flop",
+            "JK flip-flop",
+            "D flip-flop",
+            "Both b and c",
+          ],
+          ans: "Both b and c",
+          explanation:
+            "Both D and JK flip-flops prevent invalid states by proper input design.",
+        },
+        {
+          type: "mcq",
+          q: "49. In digital systems, the clock signal is used to:",
+          options: [
+            "Enable circuits",
+            "Synchronize operations",
+            "Provide memory",
+            "Reduce noise",
+          ],
+          ans: "Synchronize operations",
+          explanation:
+            "Clock signal coordinates timing of all sequential circuit operations.",
+        },
+        {
+          type: "mcq",
+          q: "50. A counter that counts both up and down is called:",
+          options: [
+            "Ring counter",
+            "Bidirectional counter",
+            "MOD counter",
+            "Johnson counter",
+          ],
+          ans: "Bidirectional counter",
+          explanation:
+            "Bidirectional (up/down) counters can count in both increasing and decreasing order.",
+        },
+
+        {
+          type: "mcq",
+          q: "51. A MOD-16 counter requires how many flip-flops?",
+          options: ["3", "4", "5", "6"],
+          ans: "4",
+          explanation:
+            "2⁴ = 16, so 4 flip-flops are needed for MOD-16 operation.",
+        },
+        {
+          type: "mcq",
+          q: "52. What is the output frequency of a 3-bit ripple counter if input clock is 800 Hz?",
+          options: ["800 Hz", "400 Hz", "200 Hz", "100 Hz"],
+          ans: "100 Hz",
+          explanation:
+            "Each flip-flop divides frequency by 2 → 800/2³ = 100 Hz.",
+        },
+        {
+          type: "mcq",
+          q: "53. Which counter counts in Gray code sequence?",
+          options: [
+            "Ring counter",
+            "Johnson counter",
+            "Binary counter",
+            "Gray counter",
+          ],
+          ans: "Gray counter",
+          explanation:
+            "Gray counter follows Gray code where only one bit changes at a time.",
+        },
+        {
+          type: "mcq",
+          q: "54. What is the initial state of a ring counter with all flip-flops cleared?",
+          options: ["All 0s", "All 1s", "Single 1", "Single 0"],
+          ans: "All 0s",
+          explanation:
+            "When cleared, all flip-flops are reset to 0; a ‘1’ must be preset for operation.",
+        },
+        {
+          type: "mcq",
+          q: "55. The output of a D flip-flop is delayed by:",
+          options: [
+            "Half clock period",
+            "One clock period",
+            "Two clock periods",
+            "Depends on input",
+          ],
+          ans: "One clock period",
+          explanation:
+            "D flip-flop output follows input on the next clock edge.",
+        },
+        {
+          type: "mcq",
+          q: "56. A MOD-3 counter will count from:",
+          options: ["0–2", "1–3", "0–3", "1–4"],
+          ans: "0–2",
+          explanation: "MOD-3 counter has 3 states, counting 0, 1, and 2.",
+        },
+        {
+          type: "mcq",
+          q: "57. In a 5-bit binary counter, what is the maximum count value?",
+          options: ["15", "31", "63", "25"],
+          ans: "31",
+          explanation: "Maximum count = 2⁵ - 1 = 31.",
+        },
+        {
+          type: "mcq",
+          q: "58. What is the function of a shift register?",
+          options: [
+            "Add numbers",
+            "Store and shift data",
+            "Multiply bits",
+            "Decode inputs",
+          ],
+          ans: "Store and shift data",
+          explanation:
+            "Shift registers temporarily store and shift data serially or parallelly.",
+        },
+        {
+          type: "mcq",
+          q: "59. Which signal determines when a flip-flop changes state?",
+          options: ["Input", "Output", "Clock", "Enable"],
+          ans: "Clock",
+          explanation:
+            "Flip-flops change state only on triggering clock edges.",
+        },
+        {
+          type: "mcq",
+          q: "60. The main purpose of asynchronous inputs like preset and clear is to:",
+          options: [
+            "Increase speed",
+            "Set or reset flip-flops instantly",
+            "Count faster",
+            "Delay output",
+          ],
+          ans: "Set or reset flip-flops instantly",
+          explanation:
+            "Asynchronous inputs override clock control to set/reset outputs immediately.",
+        },
+        {
+          type: "mcq",
+          q: "61. What is the output of a T flip-flop when T=0 for multiple clock cycles?",
+          options: [
+            "Always toggles",
+            "Holds previous state",
+            "Becomes 0",
+            "Becomes 1",
+          ],
+          ans: "Holds previous state",
+          explanation: "T=0 disables toggling; output stays unchanged.",
+        },
+        {
+          type: "mcq",
+          q: "62. Which counter resets automatically after reaching its maximum count?",
+          options: ["Synchronous", "Asynchronous", "Ring", "Modulo-N"],
+          ans: "Modulo-N",
+          explanation: "Modulo-N counters reset after N counts automatically.",
+        },
+        {
+          type: "mcq",
+          q: "63. A 2-bit up counter followed by a 3-bit down counter forms a:",
+          options: [
+            "MOD-8 counter",
+            "MOD-10 counter",
+            "MOD-16 counter",
+            "Complex counter",
+          ],
+          ans: "MOD-8 counter",
+          explanation: "Total states = 2² × 2³ = 8.",
+        },
+        {
+          type: "mcq",
+          q: "64. Which flip-flop configuration can be used as a binary divider?",
+          options: [
+            "D flip-flop",
+            "T flip-flop",
+            "JK flip-flop",
+            "SR flip-flop",
+          ],
+          ans: "T flip-flop",
+          explanation: "Each T flip-flop divides input clock frequency by 2.",
+        },
+        {
+          type: "mcq",
+          q: "65. A ripple counter with 4 flip-flops can count from:",
+          options: ["0 to 15", "0 to 10", "1 to 16", "0 to 8"],
+          ans: "0 to 15",
+          explanation: "A 4-bit ripple counter has 2⁴ = 16 states (0–15).",
+        },
+        {
+          type: "mcq",
+          q: "66. In a Johnson counter, how many states are repeated for 5 flip-flops?",
+          options: ["5", "10", "15", "20"],
+          ans: "10",
+          explanation:
+            "Johnson counter has 2n states; 5 flip-flops → 10 states.",
+        },
+        {
+          type: "mcq",
+          q: "67. What is a key disadvantage of asynchronous counters?",
+          options: [
+            "Slower operation",
+            "Cumulative delay",
+            "Complex design",
+            "Expensive",
+          ],
+          ans: "Cumulative delay",
+          explanation:
+            "Each flip-flop triggers the next, causing total delay to add up.",
+        },
+        {
+          type: "mcq",
+          q: "68. What kind of register is used in serial communication systems?",
+          options: ["SISO", "SIPO", "PISO", "PIPO"],
+          ans: "SISO",
+          explanation:
+            "Serial-In Serial-Out registers transmit and receive serial data streams.",
+        },
+        {
+          type: "mcq",
+          q: "69. What is the output frequency of a 4-bit binary counter with a 1 kHz clock?",
+          options: ["500 Hz", "250 Hz", "125 Hz", "62.5 Hz"],
+          ans: "62.5 Hz",
+          explanation:
+            "Each flip-flop divides frequency by 2 → 1000 / 2⁴ = 62.5 Hz.",
+        },
+        {
+          type: "mcq",
+          q: "70. Which of these sequential circuits can function as a memory element?",
+          options: ["Flip-flop", "Adder", "Decoder", "Multiplexer"],
+          ans: "Flip-flop",
+          explanation:
+            "Flip-flops store one bit of data, making them basic memory elements.",
+        },
+      ],
     },
     {
       subname:
         "2.4 Microprocessor : Internal Architecture and Features of Microprocessor, Assembly Language Programming.",
-      blocks: [],
+      blocks: [
+        
+      ],
     },
     {
       subname:
