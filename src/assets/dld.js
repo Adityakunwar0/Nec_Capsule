@@ -20,6 +20,7 @@ import jkflip from "./jkflip.JPG";
 import dflip from "./dflip.JPG";
 import tflip from "./tflip.JPG";
 import masterflip from "./masterflip.jpg";
+import micro from './micro.JPG';
 
 export const topic = {
   name: "2. Digital Logic and Microprocessor ",
@@ -3192,18 +3193,449 @@ export const topic = {
       subname:
         "2.4 Microprocessor : Internal Architecture and Features of Microprocessor, Assembly Language Programming.",
       blocks: [
-        
+  {type: "bold", text: "Introduction to Microprocessor : "},
+  {type: "text", text: "• A microprocessor is a programmable, clock-driven, register base, electronic chip that works as the brain of a computer."},
+  {type: "text", text: "• It takes input, processes data using instructions, and gives output."},
+  {type: "text", text: "• Main components : Microprocessor (CPU), Memory, Input, Output."},
+  {type: "text", text: "⟹ Program = set of instructions, Software = group of programs", center: true},
+
+  {type: "bold", text: "Functions of Microprocessor : "},
+  {type: "text", text: "• Transfers data between CPU and memory or I/O."},
+  {type: "text", text: "• Performs arithmetic and logic operations."},
+  {type: "text", text: "• Makes decisions and controls devices."},
+  {type: "important", text: "• Steps : ",desc : "Fetch → Decode → Execute."},
+
+  {type: "bold", text: " Microcontroller : "},
+  {type: "text", text: "• A microcontroller is a small computer on a single chip that has CPU, memory, and I/O ports."},
+  {type: "text", text: "• It is used for specific applications like washing machines or microwaves."},
+  {type: "text", text: "• Microcontroller = embedded purpose, Microprocessor = general purpose."},
+
+  {type: "bold", text: "Microprocessor vs Microcontroller : "},
+  {type: "image" , src: micro},
+
+  {type: "bold", text: "Organization of Microprocessor-based System : "},
+  {type: "text", text: "• A microprocessor system includes microprocessor, memory (ROM/RAM), and input/output devices."},
+  {type: "text", text: "• All are connected through a common path called Bus."},
+
+  {type: "bold", text: "Bus Organization (3-Bus Architecture) : "},
+   { type: "important", text: "1. Address Bus : ", desc: "Carries the memory address from CPU to memory or I/O (unidirectional)." },
+  { type: "text", text: " • Width decides memory capacity (16, 20, 24, or 32 bits)." },
+  { type: "text", text: " • Example: 16-bit address bus → 2¹⁶ = 64 KB memory." },
+
+  { type: "important", text: "2. Data Bus : ", desc: "Carries the actual data between CPU, memory, and I/O (bidirectional)." },
+  { type: "text", text: "• Common widths: 8, 16, or 32 bits." },
+
+  { type: "important", text: " 3. Control Bus : ", desc: "Carries control and timing signals to coordinate operations." },
+  { type: "text", text: "• Includes signals like Read, Write, and Memory Enable." },
+  { type: "text", text: "• Each line serves a specific control purpose (not grouped like other buses)." },
+
+  
+  
+  {type: "bold", text: " Stored Program Concept and Von Neumann Architecture : "},
+  {type: "text", text: "• Proposed by John Von Neumann."},
+  {type: "text", text: "• Both data and instructions are stored in the same memory."},
+  {type: "text", text: "• Computer fetches instructions from memory, executes them, and stores results."},
+  {type: "text", text: "• Uses the Fetch → Decode → Execute cycle for operation."},
+
+  {type: "important", text: "Advantages : ", desc: " Easy to load and modify programs, Efficient use of memory, Cost-effective."},
+  {type: "important", text: "Disadvantages : ", desc: "• Slower execution since data and instructions share the same path, Risk of data overwriting program."},
+
+  {type: "semibold", text: "Key Components : "},
+  {type: "text", text: "• ALU – Performs arithmetic and logical operations."},
+  {type: "text", text: "• CU – Controls execution and manages signals."},
+  {type: "text", text: "• Registers – Temporary memory for processing and control."},
+
+  {type: "semibold", text: "Registers and Their Functions : "},
+    {type: "important", text: "• Memory Buffer Register (MBR) : ", desc: "Holds the word to be written to or read from memory."},
+  {type: "important", text: "• Memory Address Register (MAR) : ", desc: "Contains the address in memory of the word to be read or written by MBR."},
+  {type: "important", text: "• Instruction Register (IR) : ", desc: "Contains the 8-bit operation code (opcode) of the current instruction being executed."},
+  {type: "important", text: "• Instruction Buffer Register (IBR) : ", desc: "Temporarily holds the instruction fetched from memory before execution."},
+  {type: "important", text: "• Program Counter (PC) : ", desc: "Contains the address of the next instruction to be fetched from memory."},
+  {type: "important", text: "• Accumulator (AC) and Multiplier Quotient (MQ) : ", desc: "Temporarily store operands and results of arithmetic or logical operations."}
+,
+{ type: "bold", text: "Harvard Archutecture : " },
+
+  { type: "text", text: "• Computer system with separate memories for program (instructions) and data." },
+
+  { type: "text", text: "• Each has its own address and data bus — allows simultaneous fetching of instructions and data." },
+  { type: "text", text: "• Two sets of buses: Program Memory Bus and Data Memory Bus." },
+  { type: "text", text: "• Program and data buses can be multiplexed to share lines when needed." },
+  { type: "text", text: "• Program Counter (PC) holds address of next instruction." },
+  { type: "text", text: "• ALU, Multiplier, and Accumulator handle arithmetic and logic operations." },
+  { type: "text", text: "• Control Unit manages the sequence of operations." },
+  { type: "text", text: "• Data & Control buses are bidirectional; Address bus is unidirectional." },
+
+  { type: "semibold", text: "Advantages :" },
+  { type: "text", text: "• Data and instructions can be fetched at the same time (faster speed)." },
+  { type: "text", text: "• Prevents overwriting of program and data." },
+
+  { type: "semibold", text: "Disadvantages :" },
+  { type: "text", text: "• Complex mechanism to store data and programs separately." },
+  { type: "text", text: "• Higher cost due to separate memory units." },
+  { type: "text", text: "• Memory not used optimally." },
+
+  {type: "bold", text: "Introduction to 8086 Microprocessor : "},
+  {type: "text", text: "• 8086 was designed by Intel in 1978 as an improved version of 8085."},
+  {type: "text", text: "• It is a 16-bit processor with 20 address lines (1 MB memory)."},
+  {type: "text", text: "• Performs multiplication, division, and uses pipelining for speed."},
+
+  {type: "semibold", text: " Features of 8086 : "},
+  {type: "text", text: "• 16-bit ALU and 16-bit registers for faster execution."},
+  {type: "text", text: "• Pipelined architecture: Fetch and Execute stages run in parallel."},
+  {type: "text", text: "• Instruction queue holds up to 6 instructions."},
+  {type: "text", text: "• Operates at 5, 8, or 10 MHz frequencies."},
+
+  {type: "bold", text: "Comparison between 8085 and 8086 : "},
+  {type: "text", text: "• 8085 is 8-bit, 8086 is 16-bit."},
+  {type: "text", text: "• 8085 can address 64 KB, 8086 can address 1 MB."},
+  {type: "text", text: "• 8086 supports pipelining and instruction queue (8085 does not)."},
+  {type: "text", text: "• 8086 is faster but costlier than 8085."},
+
+  {type: "bold", text: "12. Execution Unit (EU) and its Components"},
+  {type: "text", text: "• Execution Unit executes instructions fetched by the Bus Interface Unit."},
+  {type: "text", text: "• Important registers: SI (source index), DI (destination index)."},
+  {type: "text", text: "• Flag Register: Holds condition codes after operations."},
+
+  {type: "important", text: "Control Flags", desc: "D (Direction), I (Interrupt), T (Trap) – control data flow, interrupts, and single-step execution."},
+  {type: "important", text: "Status Flags", desc: "O (Overflow), S (Sign), Z (Zero), AC (Auxiliary Carry), P (Parity), CY (Carry)."},
+
+  {type: "bold", text: "13. Segment and Offset Address"},
+  {type: "text", text: "• Memory divided into segments (Code, Data, Stack)."},
+  {type: "text", text: "• Physical Address = (Segment × 10h) + Offset."},
+  {type: "text", text: "⟹ Example: 038E:0032 → 038E0 + 0032 = 03912H", center: true},
+
+  {type: "bold", text: "14. Addressing Modes in 8086"},
+  {type: "text", text: "• Define how operands are accessed in instructions."},
+  {type: "important", text: "Register Addressing", desc: "Operand in a register (e.g., MOV AX, BX)."},
+  {type: "important", text: "Immediate Addressing", desc: "Data is part of instruction (e.g., MOV AL, 35H)."},
+  {type: "important", text: "Direct Memory", desc: "Address given directly (e.g., MOV AX, [5000H])."},
+  {type: "important", text: "Indirect Memory", desc: "Address in register (e.g., MOV [BX], AL)."},
+  {type: "important", text: "Base/Index", desc: "Combines registers for flexible addressing (e.g., MOV AX, [BX+SI])."},
+  {type: "important", text: "String Addressing", desc: "Uses SI and DI registers for string operations (e.g., MOVSB)."},
+
+  {type: "bold", text: "15. Assembly Language Programming (ALP)"},
+  {type: "text", text: "• ALP is a low-level language that uses symbolic codes instead of binary."},
+  {type: "important", text: "Advantages", desc: "Fast execution, compact code, direct hardware control."},
+  {type: "important", text: "Disadvantages", desc: "Machine-dependent, lengthy and error-prone code."},
+
+  {type: "bold", text: "16. Assembly Language Features"},
+  {type: "text", text: "• Includes comments, reserved words, identifiers, statements, and directives."},
+  {type: "important", text: "Comments", desc: "Start with ';' for clarity (e.g., ADD AX, BX ; Adds AX and BX)."},
+  {type: "important", text: "Reserved Words", desc: "Special keywords like MOV, ADD, END, SEGMENT."},
+  {type: "important", text: "Identifiers", desc: "Names for data or labels (e.g., NUM1 DB 5)."},
+  {type: "important", text: "Statements", desc: "Instructions (e.g., MOV) or directives (e.g., SEGMENT)."},
+  {type: "important", text: "Directives", desc: "Control program assembly (no executable code)."},
+
+  {type: "bold", text: "17. Important Directives"},
+  {type: "important", text: "PAGE / TITLE", desc: "Control printed listing format."},
+  {type: "important", text: "SEGMENT / ENDS", desc: "Define and end memory segments."},
+  {type: "important", text: "PROC / ENDP", desc: "Define and end procedures."},
+  {type: "important", text: "END", desc: "End of program."},
+  {type: "important", text: "ASSUME", desc: "Assign purpose to segment registers (e.g., ASSUME CS:CODE)."},
+  {type: "important", text: "Processor Directive", desc: "Specifies processor type (e.g., .386)."},
+  {type: "important", text: "Dn Directives", desc: "Define data sizes – DB, DW, DD, DQ, etc."},
+  {type: "important", text: "EQU", desc: "Assigns name to constant (e.g., FACTOR EQU 12)."},
+  {type: "important", text: "DUP", desc: "Reserve and initialize memory (e.g., SUM DW 4 DUP(0))."},
+  {type: "important", text: "DOSSEG", desc: "Arrange segments in standard order."},
+  {type: "important", text: "MODEL", desc: "Defines program model (tiny, small, etc.)."},
+
+
+
       ],
     },
     {
       subname:
         "2.5 Microprocessor System : Memory Device Classification and Hierarchy, Interfacing I/O and Memory Parallel Interface, Introduction to Programmable Peripheral Interface (PPI), Serial Interface, Synchronous and Asynchronous Transmission, Serial Interface Standards, Introduction to Direct Memory Access (DMA) and DMA Controllers.",
-      blocks: [],
+      blocks: [
+
+      
+  {type: "bold", text: "1. Pin Configuration of 8085"},
+  {type: "text", text: "• The 8085 microprocessor is a small computer brain made by Intel."},
+  {type: "text", text: "• It has 40 pins (metal legs) through which it communicates with memory and I/O devices."},
+
+  {type: "semibold", text: "Main Parts of 8085"},
+  {type: "text", text: "• Arithmetic & Logic Unit (ALU) – performs mathematical and logical operations."},
+  {type: "text", text: "• Register Array – small storage inside processor for fast data handling."},
+  {type: "text", text: "• Control Unit – manages all operations and timings."},
+
+  {type: "semibold", text: "Pin Groups"},
+  {type: "text", text: "• Power & Clock: Vcc, Vss, X1, X2, CLK"},
+  {type: "text", text: "• Address Bus: A8–A15"},
+  {type: "text", text: "• Data Bus: AD0–AD7 (Multiplexed)"},
+  {type: "text", text: "• Control & Status: RD, WR, ALE, IO/M"},
+  {type: "text", text: "• Interrupts & External: INTR, RST, HOLD, HLDA, READY, RESET"},
+  {type: "text", text: "• Serial I/O: SID, SOD"},
+
+  {type: "semibold", text: "Power Supply and Clock Pins"},
+  {type: "text", text: "• Vcc → +5V power supply"},
+  {type: "text", text: "• Vss → Ground"},
+  {type: "text", text: "• X1, X2 → Connects a 6 MHz crystal giving 3 MHz clock speed."},
+  {type: "text", text: "• CLK (out) → Sends clock signal to other devices."},
+
+  {type: "semibold", text: "Address Bus (A8–A15)"},
+  {type: "text", text: "• Carries upper 8 bits of address."},
+  {type: "text", text: "• Unidirectional (one-way)."},
+  
+  {type: "semibold", text: "Multiplexed Address/Data Bus (AD0–AD7)"},
+  {type: "text", text: "• Used as address bus during first phase (A0–A7)."},
+  {type: "text", text: "• Used as data bus (D0–D7) later."},
+  {type: "text", text: "• Saves pin count on chip."},
+
+  {type: "semibold", text: "Control & Status Signals"},
+  {type: "text", text: "• ALE – Address Latch Enable; separates address and data."},
+  {type: "text", text: "• RD’ – Read signal for reading from memory/I-O."},
+  {type: "text", text: "• WR’ – Write signal for writing into memory/I-O."},
+  {type: "text", text: "• IO/M’ – High for I/O operation, Low for Memory."},
+
+  {type: "semibold", text: "Interrupt & External Signals"},
+  {type: "text", text: "• Interrupts pause CPU to handle urgent tasks (RST7.5, RST6.5, RST5.5, INTR, TRAP)."},
+  {type: "text", text: "• HOLD – Request to use system bus."},
+  {type: "text", text: "• HLDA – Acknowledges HOLD."},
+  {type: "text", text: "• READY – Makes CPU wait for slower devices."},
+  {type: "text", text: "• RESET IN’ – Resets processor (starts program from 0)."},
+  {type: "text", text: "• RESET OUT’ – Used to reset connected devices."},
+
+  {type: "semibold", text: "Serial I/O Ports"},
+  {type: "text", text: "• SID – Serial Input Data (data coming in)."},
+  {type: "text", text: "• SOD – Serial Output Data (data going out)."},
+
+  {type: "bold", text: "2. Bus Structure and Bus Types"},
+  {type: "text", text: "• A bus is a pathway that connects CPU, memory, and I/O devices to exchange data."},
+
+  {type: "semibold", text: "Types of Buses"},
+  {type: "text", text: "• Data Bus – Carries data, bidirectional (8, 16, 32, 64 bits)."},
+  {type: "text", text: "• Address Bus – Carries memory location, unidirectional."},
+  {type: "text", text: "• Control Bus – Carries control signals like Read, Write, Interrupt."},
+
+  {type: "semibold", text: "Examples of Control Signals"},
+  {type: "text", text: "• MEMR, MEMW, IOR, IOW, INT, ACK"},
+
+  {type: "semibold", text: "Bus Types Based on Timing"},
+  {type: "text", text: "• Synchronous Bus – Works with a clock signal; simple but inflexible."},
+  {type: "text", text: "• Asynchronous Bus – No clock; devices communicate when ready; more flexible but slower."},
+
+  {type: "bold", text: "3. Timing, Instruction, and Machine Cycles"},
+  {type: "semibold", text: "Instruction Cycle"},
+  {type: "text", text: "• Time needed to execute one instruction (like ADD, MOV)."},
+  {type: "text", text: "• It has two parts – Fetch Cycle (get instruction) and Execute Cycle (perform operation)."},
+  {type: "important", text: "Formula", desc: "IC = FC + EC"},
+
+  {type: "semibold", text: "Machine Cycle"},
+  {type: "text", text: "• Smallest part of instruction cycle that performs a single operation (read/write)."},
+  {type: "text", text: "• Each has 3–6 T-states."},
+  {type: "text", text: "• Types: Opcode Fetch, Memory Read/Write, I/O Read/Write, Interrupt Acknowledge."},
+
+  {type: "semibold", text: "T-State"},
+  {type: "text", text: "• Smallest unit of time in microprocessor, equal to one clock pulse."},
+
+  {type: "bold", text: "4. Memory (Types, Hierarchy, Performance)"},
+  {type: "text", text: "• Memory stores data and instructions for CPU; each location has an address."},
+
+  {type: "semibold", text: "Types of Memory"},
+  {type: "text", text: "• Primary Memory – directly accessed by CPU (RAM and ROM)."},
+  {type: "text", text: "• Secondary Memory – external, large capacity but slow (Hard Disk, CD, DVD)."},
+
+  {type: "semibold", text: "Primary Memory"},
+  {type: "text", text: "• RAM – temporary storage; volatile."},
+  {type: "text", text: "• SRAM – fast, expensive, used in cache."},
+  {type: "text", text: "• DRAM – slower, cheaper, used as main memory."},
+  {type: "text", text: "• ROM – permanent, non-volatile memory."},
+  {type: "text", text: "• Types of ROM: Masked ROM, PROM, EPROM, EEPROM, Flash Memory."},
+
+  {type: "semibold", text: "Performance Terms"},
+  {type: "text", text: "• Access Time – time to read/write data."},
+  {type: "text", text: "• Cycle Time – delay between two reads/writes."},
+  {type: "text", text: "• Bandwidth – data transfer speed."},
+  {type: "text", text: "• Access Modes – Random (RAM), Sequential (Tape), Semi-Random (Disk)."},
+
+  {type: "semibold", text: "Memory Hierarchy"},
+  {type: "text", text: "• As we go down – cost ↓, capacity ↑, speed ↓."},
+  {type: "text", text: "• Levels: Register → Cache → Main Memory → Disk → Tape."},
+
+  {type: "bold", text: "5. Interfaces (Serial, Parallel, Synchronizing with Peripherals)"},
+  {type: "semibold", text: "Parallel Interface"},
+  {type: "text", text: "• Transfers many bits at once using multiple wires."},
+  {type: "text", text: "• Fast but costly (example: old printers)."},
+  
+  {type: "semibold", text: "Serial Interface"},
+  {type: "text", text: "• Transfers one bit at a time using a single wire."},
+  {type: "text", text: "• Cheaper, longer range but slower."},
+
+  {type: "semibold", text: "Synchronizing Techniques"},
+  {type: "text", text: "• Simple I/O – device always ready."},
+  {type: "text", text: "• Wait or Strobe I/O – CPU waits until device ready."},
+  {type: "text", text: "• Single Handshaking – one acknowledgment signal."},
+  {type: "text", text: "• Double Handshaking – both confirm readiness."},
+
+  {type: "bold", text: "6. Programmable Peripheral Interface (8255A)"},
+  {type: "text", text: "• 8255A is a programmable I/O chip with 24 pins divided into 3 ports: A, B, and C."},
+  {type: "text", text: "• Port C is split into two halves – C upper & C lower."},
+  {type: "text", text: "• Works through control words that define port functions."},
+
+  {type: "semibold", text: "Operating Modes"},
+  {type: "text", text: "• BSR Mode – Bit Set/Reset (turn ON/OFF specific bits of Port C)."},
+  {type: "text", text: "• Mode 0 – Simple I/O (no handshaking)."},
+  {type: "text", text: "• Mode 1 – Handshake I/O using Port C lines."},
+  {type: "text", text: "• Mode 2 – Bidirectional Bus I/O (Port A for two-way communication)."},
+
+  {type: "bold", text: "7. Serial Data Transmission"},
+  {type: "semibold", text: "Synchronous Transmission"},
+  {type: "text", text: "• Data sent with clock pulses; fast and continuous."},
+  {type: "text", text: "• Used in high-speed communication (LAN)."},
+  
+  {type: "semibold", text: "Asynchronous Transmission"},
+  {type: "text", text: "• No clock; uses start and stop bits per byte."},
+  {type: "text", text: "• Slower but simpler; used in keyboards, COM ports."},
+
+  {type: "semibold", text: "Comparison"},
+  {type: "text", text: "• Synchronous – fast, common clock, high cost."},
+  {type: "text", text: "• Asynchronous – slow, no common clock, low cost."},
+
+  {type: "semibold", text: "Communication Standards"},
+  {type: "text", text: "• RS-232C – Computer ↔ Modem; ±12V; up to 50 ft, 20 Kbps."},
+  {type: "text", text: "• RS-423A – Improved RS-232; 100 Kbps (40 ft), 1 Kbps (4000 ft)."},
+  {type: "text", text: "• RS-422A – Differential signaling; long distance, less noise."},
+
+  {type: "bold", text: "8. DMA (Direct Memory Access) and DMA Controller (8257)"},
+  {type: "semibold", text: "What is DMA"},
+  {type: "text", text: "• Transfers data directly between memory and device without CPU involvement."},
+  {type: "text", text: "• Faster and reduces CPU workload."},
+
+  {type: "semibold", text: "How DMA Works"},
+  {type: "text", text: "• Device sends DREQ to controller."},
+  {type: "text", text: "• Controller sends HOLD to CPU."},
+  {type: "text", text: "• CPU stops and sends HLDA back."},
+  {type: "text", text: "• DMA controller takes over bus and transfers data."},
+  {type: "text", text: "• After completion, control returns to CPU."},
+
+  {type: "semibold", text: "DMA Transfer Modes"},
+  {type: "text", text: "• Burst/Block Transfer – transfers large block at once."},
+  {type: "text", text: "• Cycle Steal – one byte at a time."},
+  {type: "text", text: "• Transparent DMA – CPU and DMA share cycles alternately."},
+
+  {type: "semibold", text: "DMA Controller 8257"},
+  {type: "text", text: "• Can handle DMA for up to 4 I/O devices."},
+  {type: "text", text: "• Each channel has Address Register (starting address) and Count Register (number of bytes)."},
+  {type: "text", text: "• Transfers can be Read (Memory → I/O), Write (I/O → Memory), or Verify (check only)."}
+
+
+      ],
     },
     {
       subname:
         "2.6 Interrupt Operations : Interrupt, Interrupt Service Routine, and Interrupt Processing.",
-      blocks: [],
+      blocks: [
+          {type: "bold", text: "1. Interrupt"},
+  {type: "text", text: "• An interrupt is a signal that asks the CPU to stop its current work and perform another urgent task."},
+  {type: "text", text: "• Example: When a keyboard key is pressed, it sends an interrupt to the CPU to read the key."},
+  {type: "text", text: "• After handling, CPU returns to main program using the IRET instruction."},
+  {type: "important", text: "Need for Interrupts", desc: "• Helps when I/O devices are slow. • CPU can work on other tasks until a device is ready. • Device notifies CPU when needed."},
+
+  {type: "bold", text: "2. Interrupt Operations"},
+  {type: "text", text: "• There are three main ways CPU communicates with I/O devices:"},
+  {type: "important", text: "Programmed I/O", desc: "CPU waits until device is ready (slow)."},
+  {type: "important", text: "Interrupt I/O", desc: "Device interrupts CPU when ready (efficient)."},
+  {type: "important", text: "DMA (Direct Memory Access)", desc: "Device transfers data directly to memory (fastest)."},
+  {type: "text", text: "• CPU sends command and continues work. Device sends interrupt when ready."},
+
+  {type: "bold", text: "3. Polling vs Interrupt"},
+  {type: "text", text: "• Polling – CPU keeps checking device repeatedly (wastes time)."},
+  {type: "text", text: "• Interrupt – Device tells CPU when it’s ready."},
+  {type: "important", text: "Advantages of Interrupt", desc: "• Saves CPU time and power. • Faster response and efficient operation."},
+
+  {type: "bold", text: "4. Interrupt Structures"},
+  {type: "text", text: "• Processors have interrupt pins like INTR and NMI for handling interrupt signals."},
+  {type: "text", text: "• If multiple devices send requests, priorities are used to decide which interrupt to handle first."},
+  {type: "text", text: "• Two main types: Polled Interrupt and Daisy Chain (Vectored) Interrupt."},
+
+  {type: "bold", text: "5. Polled Interrupt"},
+  {type: "text", text: "• CPU checks each device in priority order to find which one caused the interrupt."},
+  {type: "text", text: "• Simple but slower because it uses software to check devices."},
+
+  {type: "bold", text: "6. Daisy Chain (Vectored) Interrupt"},
+  {type: "text", text: "• Devices connected in a chain according to their priority."},
+  {type: "text", text: "• CPU sends INTA (acknowledge) signal."},
+  {type: "text", text: "• Highest priority device accepts it and others ignore."},
+  {type: "text", text: "• Faster because each device knows its own ISR (service routine)."},  
+
+  {type: "bold", text: "7. Interrupt Processing Sequence"},
+  {type: "text", text: "• When an interrupt occurs:"},
+  {type: "text", text: "1. Device sends interrupt signal."},
+  {type: "text", text: "2. CPU completes current instruction."},
+  {type: "text", text: "3. CPU sends acknowledge (INTA)."},
+  {type: "text", text: "4. CPU saves PC and flags on stack."},
+  {type: "text", text: "5. CPU jumps to ISR and executes it."},
+  {type: "text", text: "6. CPU restores values and resumes main program."},
+
+  {type: "bold", text: "8. Types of Interrupt"},
+  {type: "important", text: "External Interrupts", desc: "Generated by external devices (keyboard, ADC, etc.). Can be maskable or non-maskable."},
+  {type: "important", text: "Internal Interrupts", desc: "Generated inside CPU due to errors like divide-by-zero, overflow, etc."},
+
+  {type: "bold", text: "9. Handling Multiple Interrupts"},
+  {type: "text", text: "• If multiple interrupts occur together:"},
+  {type: "text", text: "1. Sequential Processing – Handle one at a time."},
+  {type: "text", text: "2. Priority Processing – Handle higher-priority interrupt first."},
+
+  {type: "bold", text: "10. Interrupt Service Routine (ISR)"},
+  {type: "text", text: "• ISR is a small program that runs when an interrupt occurs."},
+  {type: "text", text: "• It saves registers, handles the task, and returns to main program using RET or IRET."},
+
+  {type: "bold", text: "11. Interrupts in 8085"},
+  {type: "text", text: "• Interrupt allows CPU to handle devices efficiently without wasting time."},
+  {type: "text", text: "• CPU checks for interrupts during the 2nd T-state of every instruction cycle."},
+  {type: "text", text: "• If found, CPU saves PSW and PC, sends INTA, executes ISR, and returns using RET."},
+
+  {type: "bold", text: "12. Types of 8085 Interrupts"},
+  {type: "semibold", text: "a) Software Interrupts"},
+  {type: "text", text: "• Triggered by instructions like RST 0 to RST 7."},
+  {type: "text", text: "• Each has a vector address calculated as Interrupt Number × 8."},
+  {type: "text", text: "⟹ Example: RST 5 → 5 × 8 = 40 = 0028H", center: true},
+
+  {type: "semibold", text: "b) Hardware Interrupts"},
+  {type: "important", text: "TRAP", desc: "Non-maskable, highest priority, used for emergencies like power failure."},
+  {type: "important", text: "RST 7.5", desc: "Maskable, edge-triggered, 2nd priority."},
+  {type: "important", text: "RST 6.5", desc: "Maskable, level-triggered, 3rd priority."},
+  {type: "important", text: "RST 5.5", desc: "Maskable, level-triggered, 4th priority."},
+  {type: "important", text: "INTR", desc: "Maskable, non-vectored, lowest priority."},
+
+  {type: "bold", text: "13. Important 8085 Interrupt Instructions"},
+  {type: "important", text: "SIM (Set Interrupt Mask)", desc: "Used to enable or disable (mask) specific interrupts like RST 7.5, 6.5, and 5.5."},
+  {type: "important", text: "RIM (Read Interrupt Mask)", desc: "Reads current interrupt status and serial input data."},
+  {type: "important", text: "EI (Enable Interrupts)", desc: "Enables all maskable interrupts."},
+  {type: "important", text: "DI (Disable Interrupts)", desc: "Disables all maskable interrupts."},
+
+  {type: "bold", text: "14. Interrupts in 8086"},
+  {type: "text", text: "• Interrupt breaks the normal program sequence to handle a special task."},
+  {type: "text", text: "• CPU jumps to ISR and returns using IRET."},
+  {type: "important", text: "INTR (Interrupt Request)", desc: "Maskable hardware interrupt."},
+  {type: "important", text: "NMI (Non-Maskable Interrupt)", desc: "Always active, highest priority interrupt."},
+
+  {type: "bold", text: "15. Interrupt Vector Table (IVT)"},
+  {type: "text", text: "• IVT stores addresses of all ISRs in memory from 0000H to 03FFH (1 KB)."},
+  {type: "text", text: "• Each interrupt uses 4 bytes (2 for segment, 2 for offset)."},
+  {type: "text", text: "• Supports 256 interrupts (0 to 255)."},
+
+  {type: "bold", text: "16. Dedicated Interrupts in 8086"},
+  {type: "important", text: "INT 00", desc: "Divide-by-zero error."},
+  {type: "important", text: "INT 01", desc: "Single-step interrupt (debugging)."},
+  {type: "important", text: "INT 02", desc: "Non-maskable interrupt (NMI)."},
+  {type: "important", text: "INT 03", desc: "Breakpoint interrupt."},
+  {type: "important", text: "INT 04", desc: "Signed overflow interrupt."},
+
+  {type: "bold", text: "17. Types of Interrupts in 8086"},
+  {type: "important", text: "Hardware Interrupts", desc: "Generated from INTR and NMI pins using INTA signal."},
+  {type: "important", text: "Software Interrupts", desc: "Triggered using INT n instruction (e.g., INT 21H for DOS calls)."},
+
+  {type: "bold", text: "18. Interrupt Processing Steps (Software Interrupts)"},
+  {type: "text", text: "• Steps performed by CPU when a software interrupt occurs:"},
+  {type: "text", text: "1. Push FLAGS register to stack."},
+  {type: "text", text: "2. Disable further interrupts."},
+  {type: "text", text: "3. Push CS and IP to stack."},
+  {type: "text", text: "4. Fetch ISR address from IVT."},
+  {type: "text", text: "5. Execute ISR."},
+  {type: "text", text: "6. Return to main program using IRET."},
+
+      ],
     },
   ],
 };

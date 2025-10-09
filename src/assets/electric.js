@@ -10,9 +10,6 @@ import kcl from "./kcl.JPG";
 import kvl from "./kvl.JPG";
 import sign from "./sign.JPG";
 import signkvl from "./signkvl.png";
-import linear from "./linear.JPG";
-import bilateral from "./bilateral.JPG";
-import active from "./active.JPG";
 import bq36 from "./bq36.png";
 import bq22 from "./bq22.JPG";
 import bq34 from "./bq34.png";
@@ -47,18 +44,11 @@ import band from "./band.png";
 import prlc from "./prlc.jpg";
 import pcoil from "./pcoil.png";
 import acterm from "./acterm.png";
-import waveform from "./waveform.png";
-import sc from "./sc.JPG";
 import conductor from "./conductor.JPG";
 import diode from "./diode.JPG";
 import anode from "./anode.JPG";
 import zener from "./zener.JPG";
 import piecewise from "./piecewise.JPG";
-import biasing from "./biasing.JPG";
-import config from "./config.JPG";
-import biased from "./biased.JPG";
-import model from "./model.JPG";
-import mosfet from "./mosfet.JPG";
 import symbolMosfet from "./symbolmosfet.png";
 import cmos from "./cmos.png";
 import wien from "./wien.png";
@@ -67,8 +57,6 @@ import colpitts from "./colpitts.png";
 import hartley from "./hartley.png";
 import qsqaure3 from "./qsquare3.JPG";
 import qop44 from "./qop44.png";
-import classes from "./class.JPG";
-import powermosfet from "./powermosfet.JPG";
 
 export const topic = {
   name: "1. Concept of Basic Electrical and Electronics Engineering ",
@@ -1015,11 +1003,62 @@ export const topic = {
           text: " ⟹ It is clear that Moving through R1 in the direction of I1 gives a drop: −I1R1 and Moving through source E1 from − to + gives +E1 ",
         },
         { type: "bold", text: " Linear VS Non-Linear Circuit  " },
-        { type: "image", src: linear },
+        {
+          type: "table",
+          headers: ["Feature", "Linear Circuits", "Non-Linear Circuits"],
+          rows: [
+            ["V-I relation", "Straight line", "Curved"],
+            ["Ohm’s law", "Strictly follows", "Does not follow"],
+            ["Superposition", "Applicable", "Not applicable"],
+            [
+              "Examples",
+              "Resistor, inductor, capacitor",
+              "Diode, transistor, vacuum tube",
+            ],
+          ],
+        },
         { type: "bold", text: " Bilateral Network VS Unilateral Network " },
-        { type: "image", src: bilateral },
+        {
+          type: "table",
+          headers: ["Feature", "Bilateral Network", "Unilateral Network"],
+          rows: [
+            [
+              "Definition",
+              "Behavior same in both directions of current",
+              "Behavior different in forward and reverse direction",
+            ],
+            ["Obeys Ohm’s law", "Strictly follows", "Does not follow"],
+            ["Superposition", "Applicable", "Not applicable"],
+            [
+              "Examples",
+              "Resistor, inductor, capacitor",
+              "Diode, transistor, SCR",
+            ],
+          ],
+        },
         { type: "bold", text: " Active Network VS Passive Network " },
-        { type: "image", src: active },
+        {
+          type: "table",
+          headers: ["Feature", "Active Network", "Passive Network"],
+          rows: [
+            [
+              "Energy",
+              "Can generate or supply energy",
+              "Cannot generate, only store/dissipate",
+            ],
+            [
+              "Elements",
+              "Has active elements (source, transistor, op-amp)",
+              "Only passive elements (R, L, C)",
+            ],
+            ["Power gain", "Possible", "Not possible"],
+            [
+              "Examples",
+              "Battery circuit, amplifier",
+              "RLC circuit, filter circuit",
+            ],
+          ],
+        },
         { type: "bold", text: " MCQ  : " },
         {
           type: "mcq",
@@ -3241,8 +3280,50 @@ export const topic = {
           type: "text",
           text: " • AC meters (ammeter/voltmeter) show RMS values.",
         },
-        { type: "image", src: waveform },
+        { type: "bold", text: " Some Popular waveform : " },
 
+        {
+          type: "table",
+          headers: [
+            "Wave type",
+            "Mean Value",
+            "RMS Value",
+            "Crest Factor",
+            "Waveform Factor",
+          ],
+          rows: [
+            ["DC", "1", "1", "1", "1"],
+            [
+              "Sine wave",
+              "2/π ≈ 0.637",
+              "1/√2 ≈ 0.707",
+              "√2 ≈ 1.414",
+              "π/(2√2) ≈ 1.11",
+            ],
+            [
+              "Full-wave rectified sine",
+              "2/π ≈ 0.637",
+              "1/√2 ≈ 0.707",
+              "√2 ≈ 1.414",
+              "π/(2√2) ≈ 1.11",
+            ],
+            [
+              "Half-wave rectified sine",
+              "1/π ≈ 0.318",
+              "1/2 = 0.5",
+              "2",
+              "π/2 ≈ 1.571",
+            ],
+            [
+              "Triangle wave",
+              "1/2 = 0.5",
+              "1/√3 ≈ 0.577",
+              "√3 ≈ 1.732",
+              "2/√3 ≈ 1.155",
+            ],
+            ["Square wave", "1", "1", "1", "1"],
+          ],
+        },
         { type: "bold", text: " Phasors & Complex Numbers :  " },
         {
           type: "text",
@@ -3867,7 +3948,25 @@ export const topic = {
       blocks: [
         { type: "bold", text: " Semiconductors : " },
         { type: "semibold", text: " Energy Band Concept :  " },
-        { type: "image", src: sc },
+        {
+          type: "table",
+          headers: ["Type", "Example", "Energy Gap", "Conductivity"],
+          rows: [
+            ["Insulator", "Glass, Rubber", "~15 eV", "No current flows"],
+            [
+              "Conductor",
+              "Copper, Aluminum",
+              "0 eV (bands overlap)",
+              "High conductivity",
+            ],
+            [
+              "SemiConductor",
+              "Silicon (Si), Germanium (Ge)",
+              "Small (1 eV for Si, 0.7 eV for Ge)",
+              "Medium conductivity",
+            ],
+          ],
+        },
         {
           type: "text",
           text: " ⟹ Semiconductors conduct more when temperature increases. ",
@@ -4025,11 +4124,58 @@ export const topic = {
           text: " ⟹ collector-base junction (CBJ). ",
           center: true,
         },
-        { type: "text", text: " • Operating mode depends on biasing. " },
-        { type: "image", src: biasing },
-
+        { type: "semibold", text: " • Operating mode depends on biasing : " },
+        {
+          type: "table",
+          headers: ["Mode", "EBJ", "CBJ", "Use"],
+          rows: [
+            ["Active", "Forward", "Reverse", "Amplifier"],
+            ["Cutoff", "Reverse", "Reverse", "Switch (Off)"],
+            ["Saturation", "Forward", "Forward", "Switch (On)"],
+          ],
+        },
         { type: "bold", text: "  BJT configuration :  " },
-        { type: "image", src: config },
+        {
+          type: "table",
+          headers: [
+            "Type",
+            "Common Terminal",
+            "Current Gain",
+            "Input Impedance",
+            "Output Impedance",
+            "Voltage Gain",
+            "Phase Shift",
+          ],
+          rows: [
+            [
+              "Common Base (CB)",
+              "Base",
+              "α (<1) ",
+              "Low",
+              "Very High",
+              "High",
+              "0°",
+            ],
+            [
+              "Common Emitter (CE)",
+              "Emitter",
+              "β (>100)",
+              "Medium",
+              "High",
+              "High",
+              "180°",
+            ],
+            [
+              "Common Collector (CC)",
+              "Collector",
+              "High ( ≈ 1 + β )",
+              "High",
+              "Low",
+              "<1",
+              "0°",
+            ],
+          ],
+        },
 
         { type: "bold", text: " Biasing & Q-point : " },
         {
@@ -4043,11 +4189,51 @@ export const topic = {
           desc: " Steady-state (DC) operating point in the active region. ",
         },
         { type: "semibold", text: " Types of Biasing : " },
-        { type: "image", src: biased },
+        {
+          type: "table",
+          headers: [
+            "Type",
+            "Stability",
+            "Components",
+            "Feedback Present",
+            "Common Use",
+          ],
+          rows: [
+            ["Fixed Bias", "Low", "1 resistor (RB)", "No", "Simple circuits"],
+            [
+              "Collector Feedback",
+              "Medium",
+              "RB from collector",
+              "Yes",
+              "Small amplifiers",
+            ],
+            ["Emitter Feedback", "Good", "RB + RE", "Yes", "Amplifiers"],
+            [
+              "Voltage Divider",
+              "Best",
+              "R1, R2, RE",
+              "Yes (strong)",
+              "Most circuits, ICs",
+            ],
+          ],
+        },
 
         { type: "bold", text: " Small And Large Signal Model : " },
-        { type: "image", src: model },
-
+        {
+          type: "table",
+          headers: ["Feature", "Small Signal Model", "Large Signal Model"],
+          rows: [
+            ["Signal Type", "AC only", "DC only"],
+            [
+              "Purpose",
+              "Find gain & signal behavior",
+              "Find Q-point (biasing)",
+            ],
+            ["Replace VBE with", "Small resistor (re)", "Diode (0.7V)"],
+            ["Current Relation", "IC = gm.vbe", "IC =  β .IB"],
+            ["Used for", "DC bias setup", "AC amplification"],
+          ],
+        },
         {
           type: "bold",
           text: " MOSFET (Metal Oxide Semiconductor Field Effect Transistors) :  ",
@@ -4068,7 +4254,14 @@ export const topic = {
         },
 
         { type: "bold", text: " Types Of Mosfet :  " },
-        { type: "image", src: mosfet },
+        {
+          type: "table",
+          headers: ["Type", "Default State", "Turn ON When"],
+          rows: [
+            ["Enhancement (E-type)", "OFF", "VGS > VT"],
+            ["Depletion (D-type)", "ON", "VGS < VT"],
+          ],
+        },
         {
           type: "text",
           text: " ⟹ Vt = Threshold voltage (needed to start conduction). ",
@@ -6258,7 +6451,51 @@ export const topic = {
           text: " • Amplifiers are divided based on how long the transistor conducts during one cycle of input (called conduction angle).",
         },
 
-        { type: "image", src: classes },
+        {
+          type: "table",
+          headers: [
+            "Class",
+            "Conduction Angle",
+            "Q Point",
+            "Efficiency",
+            "Distortion",
+            "Use",
+          ],
+          rows: [
+            [
+              "A",
+              "360° (Full Cycle)",
+              "Middle of load line",
+              "25-50%",
+              "No Distortion",
+              "Audio Amplifiers.",
+            ],
+            [
+              "B",
+              "180°",
+              "On X-axis",
+              "78.5%",
+              "Some Distortion",
+              "Push-pull, Audio",
+            ],
+            [
+              "AB",
+              "180-360°",
+              "Just above X-axis",
+              "<78.5%",
+              "Less than B",
+              "Audio",
+            ],
+            [
+              "C",
+              "<180°",
+              "Below X-axis",
+              "95%",
+              "Heavy Distortion",
+              "RF/Tuned Amplifiers",
+            ],
+          ],
+        },
         { type: "bold", text: " MCQ :  " },
         {
           type: "mcq",
@@ -6468,7 +6705,21 @@ export const topic = {
           desc: "Power BJT = three-layer, two-junction device (p-n-p or n-p-n).",
         },
         { type: "bold", text: " Power BJT VS Power Mosfet  : " },
-        { type: "image", src: powermosfet },
+        {
+          type: "table",
+          headers: ["Power BJT", "Power Mosfet"],
+          rows: [
+            ["Bipolar", "Unipolar"],
+            ["Current Controlled Device.", "Voltage Controlled Device."],
+            [
+              "Cannot Operate at high frequency.",
+              "Can Operate at high frequency.",
+            ],
+            ["-ve Temperature Coefficient", "+ve Temperature Coefficient"],
+            ["The Drive Circuit is Complex", "The Drive Circuit is Simple."],
+            ["Switching losses are more", "Switching losses are less."],
+          ],
+        },
 
         ,
         { type: "bold", text: "Push-Pull Amplifier" },
