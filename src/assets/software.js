@@ -1,7 +1,7 @@
 import quality from './quality.png';
 import lifecycle from './lifecycle.png';
 import inter from './interface.png';
-import dcd from './dcd.JPG';
+import dcd from './dcd.jpg';
 
 export const topic = {
   name: "8. Software Engineering and Object-Oriented Analysis & Design",
