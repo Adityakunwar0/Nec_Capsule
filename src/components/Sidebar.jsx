@@ -43,7 +43,7 @@ const BlockRenderer = ({
         <div className="flex text-lg items-start gap-2 mb-2 text-gray-800">
           {block.bullet && <span className="mt-1">{block.bullet}</span>}
           <div>
-            <span className="font-semibold mr-2">{block.text}:</span>
+            <span className="font-semibold ">{block.text}</span>
             <span>
               {Array.isArray(block.desc) ? block.desc.join(" ") : block.desc}
             </span>
